@@ -4,7 +4,7 @@ import socketserver
 
 
 class FileServerHandler(http.server.BaseHTTPRequestHandler):
-    DIRECTORY = r"C:\Users\user\Documents\CC2023\Redes\Files"
+    DIRECTORY = r"/scratch/convidado/Documentos/ServidorHTTP-main/Files"
 
     def do_GET(self):
         try:
@@ -67,8 +67,8 @@ def run_server(ip, port, directory):
     httpd.serve_forever()
 
 if __name__ == '__main__':
-    IP = "172.18.187.83"  # IP do servidor
+    IP = "172.18.1.69"  # IP do servidor
     PORT = 8000  # Porta do servidor
-    DIRECTORY = r"C:\Users\user\Documents\CC2023\Redes\Files"  # Diretório a ser listado e servido
+    DIRECTORY = r"/scratch/convidado/Documentos/ServidorHTTP-main/Files"  # Diretório a ser listado e servido
 
     run_server(IP, PORT, DIRECTORY)
